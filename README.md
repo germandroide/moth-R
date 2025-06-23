@@ -17,3 +17,10 @@ moth-R is built around two exclusive synthetic voice personas, Male and Female, 
 *   **[MOD-SVS Specification](./docs/MOD-SVS_SPECIFICATION.md):** For musicians who want to make moth-R sing!
 
 Join us in giving the Amiga a new soul.
+
+## Practical Example
+
+To understand how it all works, check out our simple "Hello World" example:
+*   [/examples/hello_moth-r.mod](./examples/hello_moth-r.mod) - The ProTracker module.
+*   [/examples/hello_moth-r_lyrics.txt](./examples/hello_moth-r_lyrics.txt) - The corresponding lyrics script.
+*   [/examples/conceptual_player.c](./examples/conceptual_player.c) - A C code file showing the logic of how the custom player reads both files to generate the vocal performance.

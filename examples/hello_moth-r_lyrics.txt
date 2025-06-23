@@ -1,0 +1,4 @@
+# Lyrics for hello_moth-r.mod
+00:00:Ho-la
+00:04:moth
+00:08:erre
