@@ -24,7 +24,7 @@ Para entender por qué hemos elegido una estrategia tan específica, es crucial 
 
 Estos tres factores nos obligan a rechazar los enfoques convencionales y a diseñar una solución híbrida e inteligente.
 
-#### **3. La Solución "Quimera": Diseño Inteligente para un Rendimiento Óptimo**
+#### **3. La Solución "mothr": Diseño Inteligente para un Rendimiento Óptimo**
 
 Nuestra estrategia se basa en realizar todo el trabajo pesado "offline" en un PC moderno, para que el Amiga solo tenga que realizar tareas ligeras y rápidas en tiempo real.
 
@@ -38,7 +38,7 @@ Nuestra estrategia se basa en realizar todo el trabajo pesado "offline" en un PC
 El proceso se divide en dos fases independientes:
 
 **Fase de Diseño (Offline - en PC):**
-1.  **Donantes de Timbre:** Seleccionamos dos personas (un hombre y una mujer) como "donantes de timbre" para nuestras voces Quimera-M y Quimera-F.
+1.  **Donantes de Timbre:** Seleccionamos dos personas (un hombre y una mujer) como "donantes de timbre" para nuestras voces mothr-M y mothr-F.
 2.  **Extracción de la "Huella Vocal" (Análisis LPC):** Grabamos la voz de los donantes y usamos un software de análisis para extraer su "huella digital" matemática: los coeficientes del filtro LPC que definen su timbre único. No guardamos el audio, solo estos parámetros ultra-compactos.
 3.  **Síntesis del Banco de Fonemas:** Para cada idioma (castellano, francés...), usamos un sintetizador en el PC. Le damos dos cosas:
     *   La "huella vocal" de la voz Quimera (M o F).
@@ -47,7 +47,7 @@ El proceso se divide en dos fases independientes:
 4.  **Creación de Paquetes de Idioma (`.vpack`):** El resultado de este proceso son paquetes de idioma extremadamente pequeños, que contienen los fonemas pre-sintetizados y el diccionario fonético.
 
 **Fase de Ejecución (Online - en Amiga 68k):**
-1.  **Motor Ligero:** El Amiga utiliza una biblioteca (`chimera-engine.library`) cuyo único trabajo es **concatenar (pegar)** los fonemas pre-generados del `.vpack` correspondiente.
+1.  **Motor Ligero:** El Amiga utiliza una biblioteca (`mothr-engine.library`) cuyo único trabajo es **concatenar (pegar)** los fonemas pre-generados del `.vpack` correspondiente.
 2.  **Bajo Impacto:** Esta operación es muy rápida y consume muy poca CPU. El Amiga no sintetiza nada; solo reproduce y mezcla pequeños fragmentos de audio, algo para lo que la arquitectura Amiga es excelente.
 
 **3.3. Arquitectura del Sistema en AmigaOS 68k**
@@ -73,7 +73,7 @@ Fase Offline (PC)
 
 Fase Online (Amiga 68k)
                                 ┌───────────────────────────────────┐
-"Say '[voice:F]Hola [voice:M]mundo'" │    chimera-engine.library         │
+"Say '[voice:F]Hola [voice:M]mundo'" │    mothr-engine.library         │
                                 └───────────────┬───────────────────┘
                                                 │ 1. Carga los .vpack necesarios
                                                 │ 2. Parsea texto y tags
@@ -104,10 +104,10 @@ Fase Online (Amiga 68k)
 
 1.  **Fase 1: Diseño de los Timbres:**
     *   Selección y grabación de los dos "donantes de timbre".
-    *   Análisis LPC y creación de los dos Modelos de Timbre Quimera (M y F).
+    *   Análisis LPC y creación de los dos Modelos de Timbre mothr (M y F).
 
 2.  **Fase 2: Desarrollo del Motor Central:**
-    *   Desarrollar y compilar la `chimera-engine.library` para AROS 68k (`vbcc`/`gcc`). Esta será la biblioteca de concatenación.
+    *   Desarrollar y compilar la `mothr-engine.library` para AROS 68k (`vbcc`/`gcc`). Esta será la biblioteca de concatenación.
 
 3.  **Fase 3: Creación de Paquetes de Idioma:**
     *   Crear los diccionarios fonéticos para los idiomas iniciales (ej: Castellano, Inglés UK).
