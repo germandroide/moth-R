@@ -1,0 +1,28 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Library files
+*.lib
+*.a
+
+# Compiled Executables
+*.exe
+*.out
+moth-r-say
+voiceprefs
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Amiga-specific
+*.info
+T:
+RAM:
+
+# Misc
+.DS_Store
+*~
+*.bak
+*.swp
