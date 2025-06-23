@@ -7,7 +7,7 @@
 
 ## Project Vision
 
-moth-R is built around two exclusive synthetic voice personas, Male and Female, who can speak multiple languages while retaining their unique vocal identity. Our hybrid "Chimera" engine performs heavy computations offline, allowing for flawless performance even on classic 68k hardware.
+moth-R is built around two exclusive synthetic voice personas, Male and Female, who can speak multiple languages while retaining their unique vocal identity. Our hybrid "mothr" engine performs heavy computations offline, allowing for flawless performance even on classic 68k hardware.
 
 ## Quick Links
 
