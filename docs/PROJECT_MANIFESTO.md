@@ -1,6 +1,6 @@
-### **Proyecto moth-R: Un Motor de Voz Sintética Multilingüe para AmigaOS 68k 080**
+### **Proyecto moth-R: Un Motor de Voz Sintética Multilingüe para AmigaOS 68k**
 
-#### **1. Visión y Misión: Dando un Alma Única al Amiga**
+#### **1. Visión y Misión: Dando un Alma Única al Amiga UAE**
 
 El Proyecto moth-R busca revivir y revolucionar una de las características más icónicas del Amiga: su capacidad de hablar. Pero no nos conformamos con replicar el pasado. Nuestra misión es crear un motor de síntesis de voz de nueva generación, diseñado con una filosofía puramente "Amiga": eficiente, artístico y que empuje los límites de lo posible en hardware clásico.
 
