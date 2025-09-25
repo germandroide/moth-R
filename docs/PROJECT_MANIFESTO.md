@@ -1,4 +1,4 @@
-### **Proyecto moth-R: Un Motor de Voz Sintética Multilingüe para AmigaOS 68k**
+### **Proyecto moth-R: Un Motor de Voz Sintética Multilingüe para AmigaOS 68k 080**
 
 #### **1. Visión y Misión: Dando un Alma Única al Amiga**
 
