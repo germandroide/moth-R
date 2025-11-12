@@ -1,0 +1,17 @@
+# Lista de fuentes de inteligencia de amenazas confiables para guiar la búsqueda de la IA.
+
+# Organismos Nacionales e Internacionales
+https://www.incibe.es/
+https://www.nist.gov/cybersecurity
+https://www.cisa.gov/
+https://www.enisa.europa.eu/
+
+# Bases de Datos de Vulnerabilidades
+https://nvd.nist.gov/
+https://cve.mitre.org/
+
+# Blogs de Seguridad y Noticias de Referencia
+https://thehackernews.com/
+https://www.bleepingcomputer.com/
+https://krebsonsecurity.com/
+https://www.securityweek.com/

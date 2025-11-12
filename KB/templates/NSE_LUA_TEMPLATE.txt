@@ -1,0 +1,35 @@
+-- Plantilla Base para Scripts NSE Dinámicos (GSD)
+
+-- Librerías estándar de Nmap
+local shortport = require "shortport"
+local http = require "http"
+local stdnse = require "stdnse"
+
+-- Descripción (será genérica, ya que el script es dinámico)
+description = [[
+Script NSE generado dinámicamente por CYBorg v2.5.
+La intención de esta sonda fue especificada por el auditor durante la ejecución.
+]]
+
+-- Autor y Licencia
+author = "CYBorg GSD (Generador de Sondas Dinámicas)"
+license = "Same as Nmap--See https://nmap.org/book/man-legal.html"
+categories = {"discovery", "intrusive"}
+
+-- Regla de Puerto: Define cuándo debe ejecutarse el script.
+-- La IA puede modificar esto, pero por defecto se ejecuta en puertos HTTP.
+portrule = shortport.http
+
+-- Acción Principal: Este es el corazón del script.
+-- La IA Estratégica (Gemini) reemplazará este bloque con la lógica real.
+action = function(host, port)
+
+  -- La lógica generada por la IA irá aquí.
+  -- Ejemplo de lo que la IA podría generar:
+  -- local response = http.get(host, port, "/")
+  -- if response.header and response.header["x-secret-header"] then
+  --   return "Se encontró el header 'x-secret-header'!"
+  -- end
+
+  return nil
+end

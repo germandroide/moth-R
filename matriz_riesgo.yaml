@@ -1,0 +1,19 @@
+# Matriz de Riesgo MAGERIT para CYBorg
+# Define cómo calcular la severidad de un hallazgo.
+
+impact_matrix:
+  # Filas: Valor del Activo, Columnas: Degradación
+  # Valores: MA (Muy Alto), A (Alto), M (Medio), B (Bajo), MB (Muy Bajo)
+  - [MA, M, A, MA]
+  - [A, B, M, A]
+  - [M, MB, B, M]
+  - [B, MB, MB, B]
+  - [MB, MB, MB, MB]
+
+risk_matrix:
+  # Filas: Impacto, Columnas: Probabilidad
+  - [MA, A, MA, MA, MA, MA]
+  - [A, M, A, A, MA, MA]
+  - [M, B, M, M, A, A]
+  - [B, MB, B, B, M, M]
+  - [MB, MB, MB, MB, B, B]

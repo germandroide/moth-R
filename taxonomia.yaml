@@ -1,0 +1,51 @@
+# Taxonomía MAGERIT/Kali para CYBorg
+# Este archivo mapea vulnerabilidades a la taxonomía de MAGERIT.
+
+vulnerabilities:
+  - id: NMAP_HOST_DISCOVERY
+    description: "Host Activo Descubierto"
+    magerit_asset_type: "[HW.host]"
+    magerit_threat_type: "[A.11]" # Acceso no autorizado (potencial)
+    severity: "Informativa"
+
+  - id: SSH_VERSION_EXPOSED
+    description: "Versión de OpenSSH expuesta"
+    magerit_asset_type: "[SW.app]"
+    magerit_threat_type: "[E.20]" # Vulnerabilidades de los programas
+    severity: "Baja"
+
+  - id: APACHE_VERSION_EXPOSED
+    description: "Versión de Apache httpd expuesta en banners"
+    magerit_asset_type: "[SW.app]"
+    magerit_threat_type: "[E.20]" # Vulnerabilidades de los programas
+    severity: "Media"
+
+  - id: WEB_DIR_EXPOSED
+    description: "Directorio web sensible expuesto (ej: /admin, /config)"
+    magerit_asset_type: "[D.inf]" # Información
+    magerit_threat_type: "[A.14]" # Fuga de información
+    severity: "Media"
+
+  - id: SQL_INJECTION_VULNERABLE
+    description: "Punto de entrada vulnerable a Inyección SQL"
+    magerit_asset_type: "[D.db]" # Base de datos
+    magerit_threat_type: "[A.12]" # Modificación no autorizada de la información
+    severity: "Alta"
+
+  - id: XSS_VULNERABLE
+    description: "Punto de entrada vulnerable a Cross-Site Scripting (XSS)"
+    magerit_asset_type: "[SW.app]"
+    magerit_threat_type: "[A.11]" # Acceso no autorizado (en el navegador del cliente)
+    severity: "Crítica"
+
+  - id: FTP_ANONYMOUS_LOGIN
+    description: "Servidor FTP permite inicio de sesión anónimo"
+    magerit_asset_type: "[D.inf]" # Información
+    magerit_threat_type: "[A.11]" # Acceso no autorizado
+    severity: "Alta"
+
+  - id: SMB_MS17_010
+    description: "Sistema vulnerable a MS17-010 (EternalBlue)"
+    magerit_asset_type: "[HW.host]"
+    magerit_threat_type: "[E.20]" # Vulnerabilidades de los programas (con posibilidad de ejecución remota de código)
+    severity: "Crítica"

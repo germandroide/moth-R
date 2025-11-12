@@ -1,0 +1,18 @@
+MANUAL: Nmap - Network Mapper
+
+DESCRIPCIÓN:
+Nmap ("Network Mapper") es una utilidad de código abierto para la exploración de redes y la auditoría de seguridad.
+
+SINOPSIS:
+nmap [Tipo de escaneo] [Opciones] {especificación de objetivo}
+
+OPCIONES MÁS COMUNES:
+-sV: Sondeo de puertos abiertos para determinar información de servicio/versión.
+-sC: Ejecutar scripts predeterminados. Es equivalente a --script=default.
+-A: Habilita la detección de SO, detección de versión, escaneo de scripts y traceroute.
+-p <rango de puertos>: Solo escanea los puertos especificados. Ejemplo: -p 22,80,443.
+-oX <fichero>: Escribe la salida en formato XML al fichero especificado.
+-T<0-5>: Establece la plantilla de temporización (más alto es más rápido). T4 es recomendado para redes razonablemente modernas y fiables.
+
+TAREA ESPECÍFICA (NMAP_ANALYSIS):
+Para la tarea 'NMAP_ANALYSIS', el objetivo es realizar un escaneo de versiones de servicios en todos los puertos TCP del objetivo, con una temporización agresiva (T4), y guardar la salida en formato XML.

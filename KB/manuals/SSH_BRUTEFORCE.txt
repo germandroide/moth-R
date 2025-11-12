@@ -1,0 +1,22 @@
+MANUAL: Hydra
+
+DESCRIPCIÓN:
+Hydra es una herramienta de inicio de sesión de red paralela muy rápida que admite numerosos protocolos de ataque.
+
+SINOPSIS:
+hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE] [-U] [-f] [-s PORT] service://server[:PORT][/OPT]
+
+OPCIONES CLAVE PARA FUERZA BRUTA SSH:
+-L <FILE>: Apunta a un archivo que contiene una lista de nombres de usuario.
+-P <FILE>: Apunta a un archivo que contiene una lista de contraseñas.
+-t <TASKS>: Número de tareas paralelas a ejecutar (hilos).
+-o <FILE>: Escribe los pares de usuario/contraseña encontrados en un archivo.
+service: El protocolo a atacar. Para SSH, usa 'ssh'.
+server: El host objetivo.
+
+DICCIONARIOS COMUNES EN KALI:
+- Lista de usuarios: /usr/share/wordlists/metasploit/unix_users.txt
+- Lista de contraseñas: /usr/share/wordlists/rockyou.txt (requiere descompresión) o /usr/share/wordlists/fasttrack.txt
+
+TAREA ESPECÍFICA (SSH_BRUTEFORCE):
+Para la tarea 'SSH_BRUTEFORCE', el objetivo es realizar un ataque de fuerza bruta contra el servicio SSH en el host objetivo. Se deben utilizar las listas de usuarios y contraseñas más comunes de Kali. El número de tareas paralelas debe ser 16.

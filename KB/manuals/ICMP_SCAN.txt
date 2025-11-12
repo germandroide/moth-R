@@ -1,0 +1,15 @@
+MANUAL: Nmap - Ping Scan
+
+DESCRIPCIÓN:
+Esta tarea utiliza Nmap para realizar un "ping scan". Su único propósito es determinar si un host está en línea. No realiza escaneo de puertos. Es rápido y menos intrusivo que un escaneo de puertos completo.
+
+SINOPSIS:
+nmap -sn [Opciones] {especificación de objetivo}
+
+OPCIONES CLAVE:
+-sn: Ping Scan - deshabilita el escaneo de puertos.
+-oX <fichero>: Escribe la salida en formato XML. Aunque la salida es mínima, es útil para un parseo consistente.
+-oN <fichero>: Escribe la salida normal al fichero especificado.
+
+TAREA ESPECÍFICA (ICMP_SCAN):
+Para la tarea 'ICMP_SCAN', el objetivo es determinar si el host objetivo está activo. La salida debe guardarse en formato de texto normal para una fácil comprobación y también en XML para mantener la consistencia del workflow.
