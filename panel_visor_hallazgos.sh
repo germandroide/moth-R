@@ -1,20 +1,8 @@
 #!/bin/bash
-# CYBorg v2.5 - Panel Visor de Hallazgos
-
+# CYBorg v2.5 - Panel 3: Visor de Hallazgos de Seguridad
 SESSION_DIR=$1
-if [ -z "$SESSION_DIR" ] || [ ! -d "$SESSION_DIR" ]; then
-    echo "Error: Se requiere un directorio de sesión válido."
-    exit 1
-fi
-
-FINDINGS_FILE="$SESSION_DIR/hallazgos.log"
-
-# Asegurarse de que el archivo existe antes de intentar seguirlo
-touch "$FINDINGS_FILE"
-
-echo "--- Visor de Hallazgos (Cliente) ---"
-echo "Esperando hallazgos en: $FINDINGS_FILE"
-echo "------------------------------------"
-
-# Usar tail -f para seguir el archivo
-tail -f "$FINDINGS_FILE"
+if [ -z "$SESSION_DIR" ]; then exit 1; fi
+source "$(dirname "$0")/lib_cyborg.sh"
+gum style --padding "0 1" --border normal --border-foreground "$C_CYAN" "Hallazgos de Seguridad (0)"
+# Usamos un bucle para evitar el bloqueo de 'tail -f' en el entorno de ejecución.
+while true; do cat "$SESSION_DIR/hallazgos.log"; sleep 5; done

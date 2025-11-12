@@ -237,6 +237,18 @@ Hemos establecido con éxito la arquitectura base Productor/Consumidor con `tmux
 
 **Análisis Estratégico:** El backend ha alcanzado una madurez funcional significativa, pero la TUI actual es un simple esqueleto no funcional. Esta parálisis impide el testeo, la depuración y la utilización de las capacidades ya desarrolladas. Esta nueva fase del plan se centra en construir la interfaz de usuario profesional descrita en `Proyecto/diseno_y_ux.md`, conectándola con el backend existente para dar vida al proyecto.
 
+### Arquitectura Visual de Paneles (Vista por Defecto)
+La TUI se estructurará siguiendo un layout de `tmux` específico para maximizar la visibilidad y el control. La numeración de paneles es la siguiente:
+
+- **Panel 0 (Título):** Ocupa todo el ancho superior (4 filas). Muestra el título de la aplicación y un botón de opciones.
+- **Panel 1 (Control):** Ubicado debajo del título, en la columna izquierda (ocupa 2/3 del ancho y 7 filas de alto).
+- **Panel 2 (Gestión de Tareas y Nodos):** Debajo del panel 1, en la mitad izquierda de la división inferior.
+- **Panel 3 (Hallazgos de Seguridad):** Debajo del panel 1, en la mitad derecha de la división inferior.
+- **Panel 4 (Razonamiento IA - MAGERIT):** Ocupa el 1/3 derecho de la pantalla, en la mitad superior.
+- **Panel 5 (Registro de Actividad):** Ocupa el 1/3 derecho de la pantalla, en la mitad inferior.
+
+Esta estructura permite la conmutación y el intercambio de paneles. Por ejemplo, los paneles 2 y 3 pueden ser reemplazados por un único panel de diálogo para configuraciones avanzadas o el asistente de inicio. Todos los procesos en los paneles no visibles deben continuar su ejecución sin interrupción.
+
 ### 🔲 Hito 21: El Esqueleto Funcional (Header, Footer y Layout Base)
 *Establece la estructura visual fundamental de la TUI, proporcionando un "lienzo" persistente para la información y las acciones.*
 -   [ ] **Crear el Panel de Cabecera:** Desarrollar `_panel_header.sh` que muestre información global persistente (Objetivo, Auditor, Modo).

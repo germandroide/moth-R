@@ -2,62 +2,63 @@
 # CYBorg v2.5 - Panel de Cabecera (Header)
 
 SESSION_DIR=$1
-if [ -z "$SESSION_DIR" ]; then
-    # Este panel no puede funcionar sin un directorio de sesión.
-    # Mostramos un mensaje de error y salimos.
-    echo "Error: Directorio de sesión no proporcionado a la cabecera."
-    sleep 5
-    exit 1
-fi
+if [ -z "$SESSION_DIR" ]; then exit 1; fi
 
-# Cargar la librería para colores, iconos y funciones comunes.
 source "$(dirname "$0")/lib_cyborg.sh"
+CONFIG_FILE="$SESSION_DIR/audit_state.conf"
+STATUS_FILE="$SESSION_DIR/audit.status"
 
-# Cargar el estado actual de la auditoría para obtener los datos a mostrar.
-source "$SESSION_DIR/audit_state.conf"
-
-# Bucle principal para mantener el panel vivo y refrescar la información.
+# Bucle infinito para refrescar la cabecera periódicamente
 while true; do
-    # Leemos el estado actual (RUNNING, STOPPED, etc.)
-    current_status=$(cat "$SESSION_DIR/audit.status" 2>/dev/null || echo "INICIANDO")
+    # Cargar los datos más recientes
+    if [ -f "$CONFIG_FILE" ]; then
+        source "$CONFIG_FILE"
+    else
+        # Valores por defecto mientras se configura la sesión
+        TARGET_IP="N/A"
+        MODE="N/A"
+    fi
 
-    # --- LÓGICA DE VISUALIZACIÓN ---
+    status_text="DETENIDA"
+    status_color="$C_YELLOW"
+    if [ -f "$STATUS_FILE" ] && [ "$(cat "$STATUS_FILE")" = "RUNNING" ]; then
+        status_text="EN CURSO"
+        status_color="$C_GREEN"
+    fi
 
-    # 1. Título principal de la aplicación.
-    title="CYBorg - Herramienta de Auditorías de Ciberseguridad"
+    # Obtener el ancho del terminal para alinear el texto
+    width=$(tmux display -p '#{pane_width}')
 
-    # 2. Estado de la conexión/auditoría.
-    case "$current_status" in
-        "RUNNING")
-            status_text="${C_GREEN}● Conectado${C_RESET}"
-            ;;
-        "STOPPED")
-            status_text="${C_YELLOW}● En Pausa${C_RESET}"
-            ;;
-        *)
-            status_text="${C_RED}● Desconectado${C_RESET}"
-            ;;
-    esac
+    # Construir las partes de la cabecera
+    left_part="${C_BOLD}${C_CYAN}CYBorg v2.5${C_RESET} | ${ICON_TARGET} ${TARGET_IP}"
+    center_part="${ICON_WORKER} Modo: ${C_BOLD}${MODE}${C_RESET}"
+    right_part="Estado: ${status_color}${C_BOLD}${status_text}${C_RESET}"
 
-    # 3. Icono de configuración (u otras acciones).
-    config_icon=""
+    # Limpiar cadenas de control para el cálculo de la longitud
+    clean_string() {
+        echo -e "$1" | sed 's/\x1b\[[0-9;]*m//g'
+    }
 
-    # --- RENDERIZADO CON GUM ---
+    left_len=$(clean_string "$left_part" | wc -c)
+    center_len=$(clean_string "$center_part" | wc -c)
+    right_len=$(clean_string "$right_part" | wc -c)
 
-    # Usamos 'gum join' para crear una línea de texto horizontal con tres secciones:
-    # izquierda, centro y derecha.
+    # Cálculo del espaciado
+    total_len=$((left_len + center_len + right_len))
 
-    header_left=$(gum style --foreground "$C_CYAN" --bold "🛡️ $title")
-    header_right=$(gum style "$status_text  $config_icon")
+    # Asegurarse de que el espacio no sea negativo si la ventana es muy pequeña
+    space_needed=$((width - left_len - center_len - right_len))
+    [ $space_needed -lt 0 ] && space_needed=0
 
-    # 'gum join' necesita saber el ancho total para alinear correctamente.
-    # Usamos 'tput cols' para obtener el ancho actual del terminal.
-    gum join --align center --vertical top -- "$header_left" "$header_right"
+    space_after_left=$(( (width - center_len) / 2 - left_len ))
+    [ $space_after_left -lt 0 ] && space_after_left=0
 
-    # Línea separadora inferior para un mejor acabado visual.
-    gum style --border normal --border-foreground "$C_GRAY" --width "$(tput cols)" ""
+    space_after_center=$(( width - left_len - space_after_left - center_len - right_len ))
+    [ $space_after_center -lt 0 ] && space_after_center=0
 
-    # Esperamos un segundo antes de volver a dibujar.
-    # Esto reduce el consumo de CPU y evita parpadeos.
+    # Limpiar la línea e imprimir
+    printf "\r%*s" "$width" ""
+    printf "\r%b%*s%b%*s%b" "$left_part" "$space_after_left" "" "$center_part" "$space_after_center" "" "$right_part"
+
     sleep 1
 done
