@@ -1,0 +1,33 @@
+# Workflows y TTPs para CYBorg
+# Define las secuencias de tareas lógicas para la IA.
+
+workflows:
+  - name: "Auditoría Web Inicial"
+    trigger:
+      - type: "AUDIT_START"
+      - audit_type: "Web"
+    steps:
+      - task: "NMAP_ANALYSIS"
+        payload: "{{TARGET_HOST}}"
+        description: "Fase MAR.1 - Caracterización de activos. Escaneo de puertos web."
+      - task: "WHATWEB_ANALYSIS"
+        payload: "{{TARGET_HOST}}"
+        description: "Fase MAR.1 - Profundizar en la caracterización de activos de software."
+        depends_on: "NMAP_ANALYSIS"
+      - task: "GOBUSTER_SCAN"
+        payload: "{{TARGET_HOST}}"
+        description: "Fase MAR.2 - Caracterización de amenazas. Búsqueda de contenido oculto."
+        depends_on: "WHATWEB_ANALYSIS"
+
+  - name: "Auditoría de Infraestructura"
+    trigger:
+      - type: "AUDIT_START"
+      - audit_type: "Infra"
+    steps:
+      - task: "ICMP_SCAN"
+        payload: "{{TARGET_HOST}}"
+        description: "Fase MAR.1 - Detección de host activo."
+      - task: "NSE_VULN_SCAN"
+        payload: "{{TARGET_HOST}}"
+        description: "Fase MAR.2 - Caracterización de amenazas. Búsqueda de vulnerabilidades conocidas."
+        depends_on: "ICMP_SCAN"

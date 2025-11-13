@@ -1,0 +1,13 @@
+RESUMEN DE LA DIRECTIVA NIS2 (Network and Information Security 2)
+
+NIS2 es una legislación de ciberseguridad a nivel de la Unión Europea que reemplaza y fortalece la directiva NIS original.
+
+OBJETIVOS PRINCIPALES:
+- Aumentar el nivel general de ciberseguridad en la UE.
+- Ampliar el alcance de los sectores considerados "esenciales" y "importantes" que deben cumplir con la directiva (energía, transporte, salud, banca, infraestructura digital, etc.).
+- Imponer obligaciones de gestión de riesgos de ciberseguridad más estrictas. Las entidades deben tomar medidas técnicas y organizativas apropiadas para gestionar los riesgos.
+- Fortalecer las obligaciones de notificación de incidentes de seguridad. Los incidentes significativos deben ser reportados a las autoridades competentes (CSIRT nacional) en plazos estrictos (notificación temprana en 24h).
+- Introducir sanciones más severas por incumplimiento, que pueden llegar a ser un porcentaje del volumen de negocios mundial de la empresa, similar al GDPR.
+
+RELEVANCIA PARA EL PENTESTING:
+Los hallazgos de una auditoría pueden demostrar el incumplimiento de las "medidas técnicas apropiadas" que exige NIS2. Una vulnerabilidad no parcheada o un sistema mal configurado puede ser una evidencia directa de una gestión de riesgos deficiente bajo esta directiva.

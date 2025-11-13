@@ -1,0 +1,16 @@
+MANUAL: Nikto - Web Server Scanner
+
+DESCRIPCIÓN:
+Nikto es un escáner de servidores web de código abierto que realiza pruebas exhaustivas contra servidores web en busca de múltiples elementos, incluyendo más de 6700 archivos/CGI potencialmente peligrosos, comprueba versiones desactualizadas de más de 1250 servidores, y problemas específicos de versión en más de 270 servidores.
+
+SINOPSIS:
+nikto -h <host> [opciones]
+
+OPCIONES CLAVE:
+-h, -host <host>: El host o IP objetivo.
+-p, -port <port>: Puerto a escanear (por defecto es 80).
+-o, -output <fichero>: Escribe la salida en el fichero especificado.
+-Format <formato>: Formato del archivo de salida. 'txt' para texto plano, 'xml' para XML.
+
+TAREA ESPECÍFICA (NIKTO_SCAN):
+Para la tarea 'NIKTO_SCAN', el objetivo es realizar un escaneo de vulnerabilidades estándar en el host objetivo. La salida debe guardarse en un archivo de texto.

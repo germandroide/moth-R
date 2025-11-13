@@ -1,0 +1,17 @@
+MANUAL: sqlmap - Automatic SQL injection and database takeover tool
+
+DESCRIPCIÓN:
+sqlmap es una herramienta de pentesting de código abierto que automatiza el proceso de detección y explotación de fallos de inyección SQL y toma de control de servidores de bases de datos.
+
+SINOPSIS:
+sqlmap -u <url> [opciones]
+
+OPCIONES CLAVE PARA ANÁLISIS AUTOMATIZADO:
+-u, --url <url>: La URL objetivo.
+--data <data>: Cadena de datos para enviar a través de POST.
+--batch: Nunca pedir input al usuario, usar el comportamiento por defecto. Esencial para automatización.
+--dbs: Enumerar las bases de datos.
+-o <fichero>: Escribe la salida en el fichero especificado.
+
+TAREA ESPECÍFICA (SQLMAP_SCAN):
+Para la tarea 'SQLMAP_SCAN', el objetivo es lanzar un análisis automatizado y no interactivo sobre una URL específica que se sospecha es vulnerable. Esta tarea es una escalada después de que una sonda inicial ha tenido éxito. El comando debe usar la opción '--batch' para evitar cualquier interacción.

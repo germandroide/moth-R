@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!--TITULO_INFORME--></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .header-glitch {
+            text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-green-400 p-8">
+    <div class="max-w-4xl mx-auto bg-gray-800 border-2 border-green-500 shadow-lg rounded-lg p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold header-glitch"><!--TITULO_INFORME--></h1>
+            <p class="text-gray-400 mt-2">Generado: <!--FECHA_GENERACION--></p>
+        </header>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Resumen de la Auditoría</h2>
+            <div class="grid grid-cols-2 gap-4 bg-gray-900 p-4 rounded">
+                <p><strong>Objetivo:</strong></p><p><!--TARGET_IP--></p>
+                <p><strong>Empresa Auditora:</strong></p><p><!--EMPRESA_AUDITORA--></p>
+                <p><strong>Auditor Principal:</strong></p><p><!--AUDITOR_NAME--></p>
+                <p><strong>Técnicos Adicionales:</strong></p><p><!--TECNICOS_ADICIONALES--></p>
+                <p><strong>ID de Sesión:</strong></p><p><!--SESSION_ID--></p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Resumen Ejecutivo (IA)</h2>
+            <div class="bg-gray-900 p-4 rounded text-justify">
+                <p class="text-gray-300 italic"><!--RESUMEN_EJECUTIVO--></p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Resumen de Criticidad</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-blue-900 p-4 rounded"><p class="text-3xl font-bold"><!--CONTADOR_BAJA--></p><p class="text-blue-300">Baja</p></div>
+                <div class="bg-yellow-900 p-4 rounded"><p class="text-3xl font-bold"><!--CONTADOR_MEDIA--></p><p class="text-yellow-300">Media</p></div>
+                <div class="bg-red-900 p-4 rounded"><p class="text-3xl font-bold"><!--CONTADOR_ALTA--></p><p class="text-red-400">Alta</p></div>
+                <div class="bg-purple-900 p-4 rounded"><p class="text-3xl font-bold"><!--CONTADOR_MANUAL--></p><p class="text-purple-300">Manual</p></div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Hallazgos Registrados</h2>
+            <div class="bg-gray-900 p-4 rounded">
+                <ul class="list-disc list-inside space-y-2">
+                    <!--HALLAZGOS_AQUI-->
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Anotaciones del Auditor</h2>
+            <div class="bg-gray-900 p-4 rounded">
+                <!--ANOTACIONES_AUDITOR-->
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold border-b-2 border-green-500 pb-2 mb-4">Evidencias Adjuntas</h2>
+            <div class="bg-gray-900 p-4 rounded">
+                <ul class="list-disc list-inside space-y-2">
+                    <!--EVIDENCIAS_AQUI-->
+                </ul>
+            </div>
+        </section>
+
+        <footer class="mt-12 pt-4 border-t border-gray-600 text-center text-xs text-gray-500">
+            <p>Este informe fue generado automáticamente por CYBorg v2.5.</p>
+            <p class="mt-2"><strong>Firma de Integridad (SHA-256):</strong></p>
+            <p class="font-mono break-all mt-1"><!--HASH_INFORME--></p>
+        </footer>
+    </div>
+</body>
+</html>

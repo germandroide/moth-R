@@ -1,0 +1,15 @@
+MANUAL: WhatWeb - Web Scanner
+
+DESCRIPCIÓN:
+WhatWeb identifica sitios web. Su objetivo es responder a la pregunta, "¿De qué está hecho este sitio web?". WhatWeb reconoce tecnologías web como sistemas de gestión de contenido (CMS), plataformas de blogs, paquetes de estadísticas/análisis, bibliotecas de JavaScript, servidores web y dispositivos integrados.
+
+SINOPSIS:
+whatweb [opciones] <URLs | rangos de IP>
+
+OPCIONES CLAVE:
+-v: Verbose. Muestra información más detallada en la salida.
+-a <nivel>: Nivel de agresión. El nivel 3 intenta todas las peticiones posibles.
+--log-brief <fichero>: Registra solo una línea por host en el fichero especificado.
+
+TAREA ESPECÍFICA (WHATWEB_ANALYSIS):
+Para la tarea 'WHATWEB_ANALYSIS', el objetivo es realizar un análisis de las tecnologías web del objetivo con un nivel de agresión 3. La salida debe ser concisa y guardarse en un archivo de texto. El objetivo debe ser tratado como una URL HTTP.

@@ -1,0 +1,16 @@
+MANUAL: Nmap - NSE Vulnerability Scan
+
+DESCRIPCIÓN:
+Esta tarea utiliza el Nmap Scripting Engine (NSE) para buscar activamente vulnerabilidades conocidas en el objetivo. Es un escaneo mucho más profundo y potencialmente más ruidoso que un simple escaneo de puertos.
+
+SINOPSIS:
+nmap -sV --script vuln [Opciones] {especificación de objetivo}
+
+OPCIONES CLAVE:
+-sV: Necesario para que muchos scripts de versión funcionen correctamente.
+--script vuln: Ejecuta todos los scripts en la categoría "vuln". Esta categoría contiene scripts que buscan vulnerabilidades conocidas.
+-p-: Escanea todos los 65535 puertos TCP. Puede ser lento. Alternativamente, se pueden escanear los puertos más comunes.
+-oX <fichero>: Escribe la salida en formato XML. Es esencial para la ingestión automática de resultados.
+
+TAREA ESPECÍFICA (NSE_VULN_SCAN):
+Para la tarea 'NSE_VULN_SCAN', el objetivo es realizar un escaneo de vulnerabilidades en el host objetivo usando los scripts de la categoría 'vuln'. Se debe incluir el sondeo de versiones (-sV) y la salida debe ser guardada en formato XML para su posterior análisis. El escaneo debe realizarse sobre los 1000 puertos más comunes para mantener un tiempo de ejecución razonable.

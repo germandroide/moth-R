@@ -1,0 +1,21 @@
+MANUAL: GoBuster - Directory/File busting tool
+
+DESCRIPCIÓN:
+GoBuster es una herramienta utilizada para forzar URIs (directorios y archivos) en sitios web y nombres de subdominios DNS.
+
+SINOPSIS (Modo DIR):
+gobuster dir -u <url> -w <wordlist> [opciones]
+
+OPCIONES CLAVE PARA BÚSQUEDA DE DIRECTORIOS:
+-u <url>: La URL del sitio web objetivo.
+-w <wordlist>: La ruta a la lista de palabras a utilizar.
+-o <fichero>: Escribe la salida en el fichero especificado.
+-t <hilos>: Número de hilos concurrentes.
+-x <extensiones>: Extensiones de archivo a buscar (ej: php,html,txt).
+
+DICCIONARIOS COMUNES EN KALI:
+- /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+- /usr/share/wordlists/dirb/common.txt
+
+TAREA ESPECÍFICA (GOBUSTER_SCAN):
+Para la tarea 'GOBUSTER_SCAN', el objetivo es realizar un escaneo de directorios en el host objetivo utilizando el modo 'dir'. Se debe usar la lista de palabras 'directory-list-2.3-medium.txt' de dirbuster. El número de hilos debe ser 20. La salida debe guardarse en un archivo de texto.

@@ -1,0 +1,12 @@
+RESUMEN DE METODOLOGÍA MAGERIT V3
+
+MAGERIT (Metodología de Análisis y Gestión de Riesgos de los Sistemas de Información) es un framework del gobierno español. Su objetivo es identificar, analizar y tratar los riesgos relacionados con los sistemas de información.
+
+CONCEPTOS CLAVE:
+- Activo: Componente del sistema que tiene valor para la organización. Se valora en dimensiones de Disponibilidad (D), Integridad (I), Confidencialidad (C), Autenticidad (A) y Trazabilidad (T).
+- Amenaza: Evento que puede dañar un activo.
+- Salvaguarda: Medida para reducir el riesgo.
+- Impacto: Daño sobre el activo si una amenaza se materializa, medido como degradación del valor del activo.
+- Riesgo: Probabilidad de que una amenaza se materialice y cause un impacto. Se calcula como Riesgo = Probabilidad x Impacto.
+
+El análisis busca determinar el Riesgo Residual, que es el riesgo que permanece después de aplicar las salvaguardas. El objetivo es que este riesgo sea aceptable para la organización.
